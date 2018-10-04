@@ -1,36 +1,32 @@
-const app = require('express')(),
-    mongo = require('mongodb').MongoClient,
-    path = require('path'),
-    bodyParser = require('body-parser'),
-    port = process.env.PORT || 5000,
-    host = '0.0.0.0';
+var app = require('express');
+var bodyParser = require('body-parser');
+var mongo = require('mongodb').MongoClient,
+var path = require('path');
+var port = process.env.PORT || 5000;
+var login=require('./login');
+url = '0.0.0.0';
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-        extended:true,
-}));
+app.use(bodyParser.urlencoded({ extended:true, }));
 app.use((req,res,next)=>{
-        res.header('Access-Control-Allow-Origin', '*');
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        next();
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
-app.get('/', (req, res) => {
+app.get('/', (req ,res) => {
     res.send('serving backend at host => '+host+' port => '+port);
-});
+})
 
 app.post('/login', (req, res) => {
-    res.send({
-        'Success':'Y',
-        'message':null,
-        'result':[]
-    });
-});
+    login.checkLogin(req, res);
+})
 
-const server = app.listen(port, host, e => {
-    if(e)
-        throw e;
+const server = app.listen(port, url, error => {
+    if(error) throw error;
     else {
-        console.warn('Serving REST at \n\thost => '+server.address().address+' \t port => '+server.address().port);
+        console.log('Running at \n'+server.address().address + '\t' +server.address().port);
+        
     }
-});
+})
+
