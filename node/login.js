@@ -35,7 +35,7 @@ function logIn(req, res) {
             dbo.close();
             if(isErr='true'){
                 output.Success='False';
-                output.err='Some error occurred in login.js'
+                output.err='Some error occurred in login.js';
             }
             else{
                 output.Success='True';
