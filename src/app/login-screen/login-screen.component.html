@@ -1,5 +1,5 @@
 
-<form #userLogin class="formStyling" (ngSubmit) = "makeRequest(userLogin)" novalidate>
+<form #userLogin=ngForm class="formStyling" (ngSubmit) = "makeRequest(userLogin)" novalidate>
         
         Username : <input type="text" name="username" style="border-radius:5px;" ngModel> <br><br>
         Password : <input type="password" name="password" style="border-radius:5px;" ngModel> <br><br>

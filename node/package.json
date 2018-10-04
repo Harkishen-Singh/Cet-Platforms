@@ -1,0 +1,26 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "serves backend for cet platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harkishen-Singh/Cet-Platforms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harkishen-Singh/Cet-Platforms/issues"
+  },
+  "homepage": "https://github.com/Harkishen-Singh/Cet-Platforms#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.1.6",
+    "multer": "^1.4.0"
+  }
+}

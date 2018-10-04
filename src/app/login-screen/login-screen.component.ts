@@ -19,11 +19,11 @@ export class LoginScreenComponent implements OnInit {
   ngOnInit() {
   }
 
-  makeRequest(data: NgForm) {
-    console.warn('entered login form submit area')
-    console.warn(data.value)
-    this.userFetch = data.value.username;
-    this.passFetch = data.value.password;
+  makeRequest(da: NgForm) {
+    console.warn('entered login form submit area');
+    let data = da.value;
+    this.userFetch = data.username;
+    this.passFetch = data.password;
     this.fetchLoginService.post(this.url, {
       params: {
         user: this.userFetch,
