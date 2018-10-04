@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cetplatforms';
-  public link = true;
+  public link: boolean = true;
 
   loginClicked() {
     console.warn('clicked')

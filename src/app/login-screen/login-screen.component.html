@@ -1,7 +1,9 @@
 
-<form action="" class="formStyling">
+<form #userLogin class="formStyling" (ngSubmit) = "makeRequest(userLogin)" novalidate>
         
-        Username : <input type="text" name="username"> <br><br>
-        Password : <input type="password" name="password"> <br><br>
+        Username : <input type="text" name="username" style="border-radius:5px;" ngModel> <br><br>
+        Password : <input type="password" name="password" style="border-radius:5px;" ngModel> <br><br>
         <button type="submit" style="margin: auto;display: block;" >Submit</button>
 </form>
+
+<a routerLink= '/home'> click to go to home screen </a>
