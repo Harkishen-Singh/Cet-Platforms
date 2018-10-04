@@ -1,0 +1,10 @@
+.formStyling{
+    margin:auto;
+    display:block;
+    margin-top: 10%;
+    margin-right: 38%; 
+    margin-left: 38%;
+    padding: 40px 15px 40px 15px ;
+    border-radius: 20px;
+    border: 2px solid pink;
+}

@@ -1,8 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Route } from '@angular/router';
 
-import { AppComponent } from './app.component';
+
 import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { AppComponent } from './app.component';
+
+var routes: Route = [
+  {
+    path:'login',
+    component: LoginScreenComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +19,9 @@ import { LoginScreenComponent } from './login-screen/login-screen.component';
     LoginScreenComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // NgModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
