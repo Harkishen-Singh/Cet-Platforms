@@ -1,9 +1,9 @@
-var app = require('express');
-var bodyParser = require('body-parser');
-var mongo = require('mongodb').MongoClient,
-var path = require('path');
-var port = process.env.PORT || 5000;
-var login=require('./login');
+const app = require('express')();
+const bodyParser = require('body-parser');
+const mongo = require('mongodb').MongoClient,
+const path = require('path');
+const port = process.env.PORT || 5000;
+const login = require('./login');
 url = '0.0.0.0';
 
 app.use(bodyParser.json());
