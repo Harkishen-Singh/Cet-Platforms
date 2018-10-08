@@ -11,10 +11,11 @@ import Logo from '../components/Logo';
 import Form from '../components/LoginForm';
 
 
-export default class Login extends Component<{}> {
+export default class Login extends Component {
 
 	render() {
     const {navigate} = this.props.navigation;
+
 		return(
 			<View style={styles.container}>
 				<Logo/>

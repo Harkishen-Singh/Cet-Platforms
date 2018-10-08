@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-export default class Logo extends Component<{}> {
+export default class Form extends Component {
 
   // home(){
   //   Actions.home();
@@ -102,14 +102,12 @@ export default class Logo extends Component<{}> {
         this.setState({showMessage:'Succesfully Logged In. Welcome '+res['first_name']+' '+res['second_name'],
             showMessageCheck:true, loginSuccess:true
             });
+            this.props.navigation.navigate('Home')
     })
     .catch(err => {
         this.setState({showMessage:'Logged In Unsuccessful',
         showMessageCheck:true, loginSuccess:false
         });
-    })
-    .then(() =>{
-      this.props.navigation.navigate('Home')
     })
     }
 }
