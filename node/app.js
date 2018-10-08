@@ -1,6 +1,6 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
-const mongo = require('mongodb').MongoClient,
+const mongo = require('mongodb').MongoClient;
 const path = require('path');
 const port = process.env.PORT || 5000;
 const login = require('./login');
@@ -29,3 +29,4 @@ const server = app.listen(port, url, error => {
         
     }
 })
+

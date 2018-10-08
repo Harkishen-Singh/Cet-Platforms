@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-screen',
@@ -12,7 +13,7 @@ export class LoginScreenComponent implements OnInit {
   private userFetch: string;
   private passFetch: string;
 
-  constructor(private fetchLoginService : Http) {
+  constructor(private fetchLoginService : Http, private router: Router) {
     this.url = 'http://0.0.0.0:5000/login';
    }
 
@@ -24,20 +25,22 @@ export class LoginScreenComponent implements OnInit {
     let data = da.value;
     this.userFetch = data.username;
     this.passFetch = data.password;
-    this.fetchLoginService.post(this.url, {
-      params: {
-        user: this.userFetch,
-        pass: this.passFetch
-      },
-      observe: 'response'
-    }).toPromise()
-    .then( response => {
-      console.warn('response from backend');
-      console.warn(response);
-    })
-    .catch(e => {
-      console.error('Error occured for fetching login info');
-    });
+    // this.fetchLoginService.post(this.url, {
+    //   params: {
+    //     user: this.userFetch,
+    //     pass: this.passFetch
+    //   },
+    //   observe: 'response'
+    // }).toPromise()
+    // .then( response => {
+    //   console.warn('response from backend');
+    //   console.warn(response);
+    // })
+    // .catch(e => {
+    //   console.error('Error occured for fetching login info');
+    // });
+
+    this.router.navigate(['/home']);
   }
 
 }

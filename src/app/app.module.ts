@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { AppComponent } from './app.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 var routes: Routes = [
   {
@@ -24,7 +26,9 @@ var routes: Routes = [
   declarations: [
     AppComponent,
     LoginScreenComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
