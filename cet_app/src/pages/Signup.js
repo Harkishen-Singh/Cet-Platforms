@@ -14,14 +14,18 @@ import Form from '../components/SignupForm';
 export default class Signup extends Component<{}> {
 
 	render() {
-    const {navigate} = this.props.navigation;
+    // const {navigate} = this.props.navigation;
 		return(
 			<View style={styles.container}>
 				<Logo/>
 				<Form type="Signup"/>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Already have an account?</Text>
-					<TouchableOpacity onPress={() => navigate('Login')}><Text style={styles.signupButton}> Sign in</Text></TouchableOpacity>
+          <TouchableOpacity 
+          onPress={() => 
+          navigate('Login')
+        }
+        ><Text style={styles.signupButton}> Sign in</Text></TouchableOpacity>
 				</View>
 			</View>	
 			)

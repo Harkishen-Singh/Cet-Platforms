@@ -32,7 +32,7 @@ export default class Form extends Component {
 		return(
 			<View style={styles.container}>
           <TextInput style={styles.inputBox} 
-              underlineColorAndroid='rgba(0,0,0,0)' 
+              underlineColorAndroid='transparent' 
               placeholder="Email"
               placeholderTextColor = "white"
               selectionColor="white"
@@ -40,7 +40,7 @@ export default class Form extends Component {
               onSubmitEditing={()=> this.password.focus()}
               />
           <TextInput style={styles.inputBox} 
-              underlineColorAndroid='rgba(0,0,0,0)' 
+              underlineColorAndroid='transparent' 
               placeholder="Password"
               secureTextEntry={true}
               placeholderTextColor = "white"
@@ -102,7 +102,7 @@ export default class Form extends Component {
         this.setState({showMessage:'Succesfully Logged In. Welcome '+res['first_name']+' '+res['second_name'],
             showMessageCheck:true, loginSuccess:true
             });
-            this.props.navigation.navigate('Home')
+            // this.props.navigation.navigate('Home')
     })
     .catch(err => {
         this.setState({showMessage:'Logged In Unsuccessful',

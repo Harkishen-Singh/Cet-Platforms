@@ -47,7 +47,7 @@ export default class Form extends Component<{}> {
               autoCorrect={false}
               ref={(input) => this.confirmpassword = input}
               />  
-            <TouchableOpacity style={styles.button} onPress={this.props.navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Home')}>
              <Text style={styles.buttonText}>{this.props.type}</Text>
             </TouchableOpacity>     
   		</View>
