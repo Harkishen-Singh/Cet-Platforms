@@ -16,7 +16,7 @@ class App extends Component {
     }
     this.didLogin = this.didLogin.bind(this);
   }
-  componentDidMount() {
+  componentWillMount() {
     this.setState({loggedIn:false});
   }
   didLogin (state, pass, user) {
@@ -28,7 +28,7 @@ class App extends Component {
         <HashRouter>
           <div>
             {
-              (!this.state.loggedIn===true) 
+              (this.state.loggedIn===true) 
               ? 
               <div>
                 <HeaderTag />
