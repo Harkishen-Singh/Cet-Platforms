@@ -1,10 +1,28 @@
 import React, { Component } from 'react'
 import './css/style_gen.css';
+import {BrowserRouter as Link} from 'react-router-dom'
 
 class HeaderTag extends Component {
     render() {
         return (
-            <header className="header_area">
+            <div className="header">
+                <a href="#default" className="logo">CET - Platforms</a>
+                <div className="header-right">
+                    <a className="active" href="#home">Home</a>
+                    <a href="#contact">Profile</a>
+                    <a href="#about">About</a>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default HeaderTag;
+
+
+
+const headerGarbage = () => (
+    <header className="header_area">
                 <div classNameName="top_menu row m0">
                     <div className="container">
                         <div className="float-left">
@@ -30,7 +48,7 @@ class HeaderTag extends Component {
                 <div className="main_menu">
                     <nav className="navbar navbar-expand-lg navbar-light">
                         <div className="container">
-                            <a className="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="" /></a>
+                            <a className="navbar-brand logo_h" href="index.html"><img src={require("./img/logo.png")} alt="" /></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" 
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -75,8 +93,4 @@ class HeaderTag extends Component {
                     </nav>
                 </div>
         </header>
-        );
-    }
-}
-
-export default HeaderTag;
+);

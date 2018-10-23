@@ -1,0 +1,20 @@
+{
+  "name": "web-ui",
+  "description": "bower front end components",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/Harkishen-Singh/Cet-Platforms",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.1.3",
+    "bootstrap-css": "^3.3.7"
+  }
+}
