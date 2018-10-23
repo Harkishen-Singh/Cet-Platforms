@@ -13,16 +13,22 @@ class App extends Component {
     this.state = {
       loggedIn: false,
     }
+    this.didLogin = this.didLogin.bind(this);
   }
   componentDidMount() {
     this.setState({loggedIn:false});
+  }
+  didLogin (state) {
+    console.warn('state received was '+state)
+    this.setState({loggedIn: state})
+    // alert('this was invoked')
   }
   render() {
     return (
         <HashRouter>
           <div>
             {
-              (this.state.loggedIn) ? 
+              (this.state.loggedIn===true) ? 
               <div>
                 <HeaderTag />
                 <Route exact path="/" component={HomeScreen} />
@@ -31,7 +37,7 @@ class App extends Component {
                 <Route path="/component" component={AboutPlatforms} />
               </div>
               :
-              <Login />
+              <Login didLogin={this.didLogin} />
             }
             
             
