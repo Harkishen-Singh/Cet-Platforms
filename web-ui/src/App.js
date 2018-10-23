@@ -22,18 +22,19 @@ class App extends Component {
         <HashRouter>
           <div>
             {
-              (!this.state.loggedIn) ? 
+              (this.state.loggedIn) ? 
               <div>
                 <HeaderTag />
+                <Route exact path="/" component={HomeScreen} />
+                <Route path="/home" component={HomeScreen} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/component" component={AboutPlatforms} />
               </div>
               :
               <Login />
             }
             
-            <Route exact path="/" component={HomeScreen} />
-            <Route path="/home" component={HomeScreen} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/component" component={AboutPlatforms} />
+            
           </div>
         </HashRouter>
     );
