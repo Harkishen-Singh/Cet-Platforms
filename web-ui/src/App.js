@@ -6,6 +6,7 @@ import AboutPlatforms from './Components/AboutPlatforms';
 import Profile from './Components/Profile';
 import HeaderTag from './Components/Header';
 import Login from './Components/Login';
+import FooterTag from './Components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -18,23 +19,24 @@ class App extends Component {
   componentDidMount() {
     this.setState({loggedIn:false});
   }
-  didLogin (state) {
-    console.warn('state received was '+state)
+  didLogin (state, pass, user) {
+    console.warn('username : '+user+'\tpassword : '+pass)
     this.setState({loggedIn: state})
-    // alert('this was invoked')
   }
   render() {
     return (
         <HashRouter>
           <div>
             {
-              (this.state.loggedIn===true) ? 
+              (!this.state.loggedIn===true) 
+              ? 
               <div>
                 <HeaderTag />
-                <Route exact path="/" component={HomeScreen} />
-                <Route path="/home" component={HomeScreen} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/component" component={AboutPlatforms} />
+                  <Route exact path="/" component={HomeScreen} />
+                  <Route path="/home" component={HomeScreen} />
+                  <Route path="/profile" component={Profile} />
+                  <Route path="/about" component={AboutPlatforms} />
+                <FooterTag />
               </div>
               :
               <Login didLogin={this.didLogin} />

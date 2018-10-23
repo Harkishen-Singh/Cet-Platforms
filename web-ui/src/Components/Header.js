@@ -6,10 +6,10 @@ class HeaderTag extends Component {
     render() {
         return (
             <div className="header">
-                <a href="#default" className="logo">CET - Platforms</a>
+                <a href="#home" className="logo">CET - Platforms</a>
                 <div className="header-right">
                     <a className="active" href="#home">Home</a>
-                    <a href="#contact">Profile</a>
+                    <a href="#profile">Profile</a>
                     <a href="#about">About</a>
                 </div>
             </div>

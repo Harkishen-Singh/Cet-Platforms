@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 import {BrowserRouter as Link} from 'react-router-dom'
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username:'',
+            password:'',
+        }
+    }
 
     setLoginParams () {
-        this.props.didLogin(true);
+        this.props.didLogin(true, this.state.password, this.state.username);
     }
 
     render() {
@@ -23,10 +30,24 @@ class Login extends Component {
                 <h2 style={{textAlign:'center'}}>Enter your credentials</h2>
                 <div style={styling}>
                     <img src={require("./img/cet_pic.jpeg")} style={{marginLeft:'20%', marginBottom:20}}/>
-                    <form className="formStyling"  noValidate>
+                    <form noValidate>
                             
-                            Username : <input type="text" name="username" style={{borderRadius:5}} /> <br/><br/>
-                            Password : <input type="password" name="password" style={{borderRadius:5}}  /> <br/><br/>
+                            Username : <input type="text" 
+                                              value={this.state.username} 
+                                              style={{borderRadius:5}} 
+                                              onChange={(event) => {
+                                                  this.setState({username: event.target.value});
+                                              }}
+                                               /> 
+                                        <br/><br/>
+                            Password : <input type="password" 
+                                              value={this.state.password} 
+                                              style={{borderRadius:5}} 
+                                              onChange={(event) => {
+                                                this.setState({password: event.target.value});
+                                            }}
+                                              /> 
+                                        <br/><br/>
                             <button type="submit" style={{margin:'auto', display:'block'}} onClick={this.setLoginParams.bind(this)} >Submit</button>
                     </form>
                 </div>
